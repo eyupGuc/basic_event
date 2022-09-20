@@ -25,3 +25,9 @@ addBtn.addEventListener("click", () => {
   }
   taskInput.focus();
 });
+
+window.addEventListener("load", () => {
+  taskInput.focus();
+});
+
+//? delete Btn handler
