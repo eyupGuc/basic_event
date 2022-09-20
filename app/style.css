@@ -4,3 +4,9 @@ body {
   background-size: cover;
   height: 100vh;
 }
+
+section .task-input {
+  width: 35rem;
+  height: 4rem;
+  border-radius: 1rem;
+}
