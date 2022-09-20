@@ -25,3 +25,21 @@ document.getElementById("btn").addEventListener("click", () => {
     alert(`${input.value} entered`);
   }
 });
+
+const list = document.querySelectorAll(".list"); // nodeList
+// console.log(list);
+list.forEach((li) => {
+  li.style.transition = "all 0.8s";
+  li.style.lineHeight = "2rem";
+
+  li.onmouseover = () => {
+    li.style.fontSize = "2rem";
+    li.style.transform = "translateX(10px)";
+    li.style.color = "green";
+  };
+  li.onmouseout = () => {
+    li.style.fontSize = "1rem";
+    li.style.transform = "translateX(-10px)";
+    li.style.color = "black";
+  };
+});
