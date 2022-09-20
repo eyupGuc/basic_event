@@ -17,11 +17,17 @@ addBtn.addEventListener("click", () => {
   if (!taskInput.value) {
     alert("Please enter a task");
   } else {
-    newUl.innerHTML += `<li>${taskInput.value}</li>`;
-    console.log(newUl);
-    taskInput.value = "";
-    newUl.style.color = "white";
-    newUl.style.fontSize = "3rem";
+    if (taskInput.value === "javascript") {
+      newUl.innerHTML += `<li>${taskInput.value}</li>`;
+      newUl.style.color = "red";
+      taskInput.value = "";
+    } else {
+      newUl.innerHTML += `<li>${taskInput.value}</li>`;
+      console.log(newUl);
+      taskInput.value = "";
+      newUl.style.color = "white";
+      newUl.style.fontSize = "3rem";
+    }
   }
   taskInput.focus();
 });
@@ -31,3 +37,23 @@ window.addEventListener("load", () => {
 });
 
 //? delete Btn handler
+deleteBtn.addEventListener("click", () => {
+  newUl.childElementCount > 0
+    ? newUl.removeChild(newUl.lastElementChild)
+    : alert("There is not item to count");
+});
+
+//? enter key event handler
+
+taskInput.addEventListener("keydown", (event) => {
+  // console.log(event);
+  // console.log(event.target);
+  // console.log(event.keyCode);
+  // console.log(event.code);
+  if (event.keyCode === 13) {
+    addBtn.click();
+  }
+  if (event.code === "Delete") {
+    deleteBtn.click();
+  }
+});
