@@ -43,3 +43,12 @@ list.forEach((li) => {
     li.style.color = "black";
   };
 });
+
+window.onload = () => {
+  document.querySelector("#input").focus();
+};
+
+const print = () => {
+  console.log("Starting");
+};
+print();
