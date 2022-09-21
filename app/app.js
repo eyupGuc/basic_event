@@ -17,19 +17,14 @@ addBtn.addEventListener("click", () => {
   if (!taskInput.value) {
     alert("Please enter a task");
   } else {
-    if (taskInput.value === "javascript") {
-      newUl.innerHTML += `<li>${taskInput.value}</li>`;
-      newUl.style.color = "red";
-      taskInput.value = "";
-    } else {
-      newUl.innerHTML += `<li>${taskInput.value}</li>`;
-      console.log(newUl);
-      taskInput.value = "";
-      newUl.style.color = "white";
-      newUl.style.fontSize = "3rem";
-    }
+    newUl.innerHTML += `<li>${taskInput.value}</li>`;
+    console.log(newUl);
+    taskInput.value = "";
+    newUl.style.color = "white";
+    newUl.style.fontSize = "3rem";
+
+    taskInput.focus();
   }
-  taskInput.focus();
 });
 
 window.addEventListener("load", () => {
